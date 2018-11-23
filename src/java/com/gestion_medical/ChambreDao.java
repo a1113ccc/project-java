@@ -48,18 +48,14 @@ public class ChambreDao {
     }
     
     public int addChambre(Chambre chambre){  
-        ServiceDao serviceDao;
         int i=0;
         PreparedStatement ps = null;
         try{
             Connection con = getConnection();
             ps = con.prepareStatement("INSERT INTO `chambre` (`capacite`,`service_id`,`prix`) VALUES(?,?,?)");
             
-            serviceDao = new ServiceDao();
-            serviceDao.addService(chambre.getService());
-            
             ps.setInt(1, chambre.getCapacite());
-            ps.setInt(2, serviceDao.getService(chambre.getService().getId()).getId());
+            ps.setInt(2, chambre.getService().getId());
             ps.setFloat(3, chambre.getPrix());
             
             i = ps.executeUpdate();
