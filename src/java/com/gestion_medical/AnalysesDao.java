@@ -51,21 +51,15 @@ public class AnalysesDao {
     }
     
     public int addAnalyses(Analyses analyses){  
-        ConsultationDao consultationDao;
-        LaboratoireDao laboratoireDao;
         int i=0;
         PreparedStatement ps = null;
         try{
             Connection con = getConnection();
             ps = con.prepareStatement("INSERT INTO `patien` (`consultation_id`,`laboratoire_id`,`prix`) VALUES(?,?,?)");
             
-            consultationDao = new ConsultationDao();
-            laboratoireDao = new LaboratoireDao();
-            consultationDao.addConsultation(analyses.getConsultation());
-            laboratoireDao.addLaboratoire(analyses.getLaboratoire());
             
-            ps.setInt(1, consultationDao.getConsultation(analyses.getConsultation().getId()).getId());
-            ps.setInt(2, laboratoireDao.getLaboratoire(analyses.getLaboratoire().getId()).getId());
+            ps.setInt(1, analyses.getConsultation().getId());
+//            ps.setInt(2, Laboratoire..getId());
             ps.setFloat(3, analyses.getPrix());
             
             i = ps.executeUpdate();
