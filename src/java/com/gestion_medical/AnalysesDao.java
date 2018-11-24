@@ -60,6 +60,10 @@ public class AnalysesDao {
             
             ps.setInt(1, analyses.getConsultation().getId());
 //            ps.setInt(2, Laboratoire..getId());
+            ps = con.prepareStatement("INSERT INTO `analyses` (`consultation_id`,`laboratoire_id`,`prix`) VALUES(?,?,?)");
+            
+            ps.setInt(1, analyses.getConsultation().getId());
+            ps.setInt(2, analyses.getLaboratoire().getId());
             ps.setFloat(3, analyses.getPrix());
             
             i = ps.executeUpdate();

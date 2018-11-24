@@ -27,6 +27,16 @@ public class User {
     
     
     public User() {
+        this.id = 0;
+        this.userName = "";
+        this.password = "";
+        this.firstName = "";
+        this.lastName = "";
+        this.ddn = new Date(0);
+        this.address = "";
+        this.ldn = "";
+        this.phone = "";
+        this.userType = "";
     }
 
     public User(int id, String userName, String password, String firstName, String lastName, Date ddn, String address, String ldn, String phone, String userType) {

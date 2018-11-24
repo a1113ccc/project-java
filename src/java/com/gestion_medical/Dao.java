@@ -20,7 +20,7 @@ public class Dao {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/gestion_medicale2","root", "adminadmin");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/gest medi2","root", "");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
