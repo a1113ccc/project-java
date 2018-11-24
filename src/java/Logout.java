@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 
-
-import com.gestion_medical.User;
-import com.gestion_medical.UserDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -20,8 +17,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author abdelhamid
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+@WebServlet(urlPatterns = {"/Logout"})
+public class Logout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +37,10 @@ public class Login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Login</title>");            
+            out.println("<title>Servlet Logout</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Logout at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,7 +58,9 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        session.setAttribute("username", null);
+        response.sendRedirect("index.jsp");
     }
 
     /**
@@ -75,22 +74,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        UserDao userDao = new UserDao();
-        User user;
-        String username = "" + request.getParameter("username");
-        String password = "" + request.getParameter("passowrd");
-        user = userDao.getUser(username, password);
-        HttpSession session = request.getSession();
-        if(user != null){
-            session.setAttribute("username", username);
-            response.sendRedirect("home.jsp");
-        }
-        else{
-            session.setAttribute("fun_login", "-1");
-            response.sendRedirect("login.jsp");
-        }
-        
+        processRequest(request, response);
     }
 
     /**

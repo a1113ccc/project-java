@@ -55,9 +55,20 @@ public class AnalysesDao {
         PreparedStatement ps = null;
         try{
             Connection con = getConnection();
+<<<<<<< HEAD
             ps = con.prepareStatement("INSERT INTO `analyses` (`consultation_id`,`laboratoire_id`,`prix`) VALUES(?,?,?)");
             
             ps.setInt(1, analyses.getConsultation().getId());
+=======
+            ps = con.prepareStatement("INSERT INTO `patien` (`consultation_id`,`laboratoire_id`,`prix`) VALUES(?,?,?)");
+            
+            
+            ps.setInt(1, analyses.getConsultation().getId());
+//            ps.setInt(2, Laboratoire..getId());
+            ps = con.prepareStatement("INSERT INTO `analyses` (`consultation_id`,`laboratoire_id`,`prix`) VALUES(?,?,?)");
+            
+            ps.setInt(1, analyses.getConsultation().getId());
+>>>>>>> 9efc4eba3e2e9eb19418afe7425d88f73f893efc
             ps.setInt(2, analyses.getLaboratoire().getId());
             ps.setFloat(3, analyses.getPrix());
             
