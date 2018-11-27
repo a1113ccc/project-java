@@ -76,7 +76,7 @@ public class PrenezRendezVous extends HttpServlet {
         Date date = new Date();
         HttpSession session = request.getSession();
         String username = ""+session.getAttribute("username");
-        if( username!="" ){
+        if( !username.equals("null") ){
             response.sendRedirect("home.jsp");
         }
         else{

@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/web/shared/_headerHome.jsp</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/src/java/Logout.java</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/src/java/com/gestion_medical/Analyses.java</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/src/java/com/gestion_medical/Reservation_chambreDao.java</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/src/java/com/gestion_medical/Reservation_chambre.java</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/src/java/com/gestion_medical/Rendez_vousDao.java</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/web/home.jsp</file>
-            <file>file:/C:/Users/abdelhamid/Documents/NetBeansProjects/gestion%20medicale%20finale/src/java/Login.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

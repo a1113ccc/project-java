@@ -9,12 +9,39 @@ import static com.gestion_medical.Dao.getConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
  * @author abdelhamid
  */
 public class SpecialiteDao {
+    
+    public ArrayList<Specialite> getSpecialites(){
+        ArrayList<Specialite> specialites = new ArrayList<>();
+        Specialite specialite = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            Connection con = getConnection();
+            ps = con.prepareStatement("SELECT * from specialite");
+            
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                specialite = new Specialite();
+                specialite.setId(rs.getInt("id"));
+                specialite.setName(rs.getString("name"));
+                specialites.add(specialite);
+            }
+            rs.close();
+            ps.close();
+            con.close();
+        }catch(Exception e){ }
+        
+        return specialites;
+    }
+    
      public Specialite getSpecialite(int id){
         Specialite specialite = null;
         PreparedStatement ps = null;
